@@ -1,0 +1,396 @@
+/* ==============================
+   RESET & GLOBAL STYLES
+============================== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100%;
+  scroll-behavior: smooth;
+  background-color: #f1ede8;
+}
+
+@font-face {
+  font-family: 'Orion';
+  src: url('fonts/Orion.otf') format('opentype');
+}
+@font-face {
+  font-family: 'OrionTwo';
+  src: url('fonts/Oriontwo.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Moonscape';
+  src: url('fonts/Moonscape.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Sequel1';
+  src: url('fonts/Sequel100Black-115.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Sequel2';
+  src: url('fonts/Sequel100Black-65.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Sequel3';
+  src: url('fonts/Sequel100Black-45.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Sequel4';
+  src: url('fonts/Sequel100Black-85.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Sequel5';
+  src: url('fonts/Sequel100Black-55.ttf') format('truetype');
+}
+
+
+
+/* ==============================
+   HERO SECTION
+============================== */
+.hero {
+  width: calc(100% - 40px); 
+  height: calc(100vh - 40px);
+  margin: 20px;
+  
+  position: relative;
+  background-color: #f1ede8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.hero-title {
+  font-family: 'Sequel1', sans-serif;
+  font-size: clamp(2rem, 7vw, 5rem);
+  font-weight: normal;
+  color: #2b2b2b;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.hero-main-image {
+  position: absolute;
+  bottom: 5px;        /* anchor near bottom */
+  left: 50%;           /* center horizontally */
+  transform: translateX(-50%);
+  max-width: 430px;
+  width: 40%;
+  min-width: 300px;
+  height: auto;
+  z-index: 1;
+}
+
+.hero-text-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 140px; /* keep space for image */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;  /* allow wrapping on small screens */
+  z-index: 2;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Left text block */
+.hero-text-left {
+  position: absolute;
+  top: 38%;
+  width: 34%;
+  font-family: 'Sequel3', sans-serif;
+  font-size: 1.1rem;
+  color: #2b2b2b;
+  line-height: 1.6;
+  text-align: left;
+  left: 50px;
+}
+
+/* Right text block */
+.hero-text-right {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  width: 32%;
+  transform: translateY(-50%);
+  text-align: right;
+  color: #2b2b2b;
+  font-family: 'Sequel3', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+
+/* ==============================
+   NAVIGATION
+============================== */
+.hero-nav {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.nav-button,
+.nav-btn {
+  font-family: 'Sequel2', sans-serif;
+  text-decoration: none;
+  color: #2a2a2a;
+  background-color: #f1ede8;
+  border-radius: 10px;
+  margin: 3px;
+  padding: 15px 15px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-button:hover,
+.nav-btn:hover {
+  background-color: #afa7a2;
+}
+
+.btn-check:checked + .nav-btn {
+  background-color: #c9c8c9;
+}
+
+.desktop-menu {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;       /* absolute positioning */
+  top: 60px;               /* just below hamburger */
+  right: 20px;
+  flex-direction: column;
+  background: rgba(241, 237, 232, 0.95);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 20;             /* higher than hero title */
+  width: 150px;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==============================
+   TEXT & CONTENT
+============================== */
+.intro-text {
+  font-family: 'Sequel4', sans-serif;
+  font-size: 3rem;
+  font-weight: normal;
+  color: #2b2b2b;
+  margin-bottom: 10px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.intro-line {
+  width: 100%;
+  height: 1px;
+  background-color: #2b2b2b;
+  border: none;
+  margin: 0; 
+}
+
+.content {
+  padding: 40px 20px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* ==============================
+   HERO SECONDARY
+============================== */
+.skills-experiences {
+  width: calc(100% - 40px);
+  margin: 20px;
+  position: relative;
+  background-color: #cdc0b1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* align content to the left */
+  justify-content: flex-start;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  gap: 40px; /* space between cards & heading */
+}
+
+.skills-experiences .card {
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  padding: 30px;
+  min-height: 180px;
+  flex: 1 1 calc(33.333% - 40px);
+  transition: transform 0.3s ease;
+}
+
+.skills-experiences .hero-title {
+  margin-bottom: 30px;
+}
+
+.card-text.small {
+  font-family: 'Sequel2', sans-serif;
+}
+
+.card-title {
+  font-family: 'Sequel5', sans-serif;
+}
+
+
+/* ==============================
+   CARDS
+============================== */
+.school-card {
+  border-radius: 15px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.school-card:hover {
+  transform: translateY(-5px);
+}
+
+.school-card .card-body {
+  padding: 20px;
+}
+
+.school-card .card-title {
+  font-family: 'OrionTwo', sans-serif;
+  font-size: 1.4rem;
+  color: #2b2b2b;
+}
+
+.school-card .card-text {
+  font-size: 1rem;
+  color: #333;
+}
+.content .intro-text {
+  flex: 1 1 100%;
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+
+
+
+/* ==============================
+   HEADER
+============================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #f1ede8;
+}
+
+.logo {
+  font-family: 'Sequel1', sans-serif;
+  font-size: 1.5rem;
+  color: #2a2a2a;
+}
+
+/* ==============================
+   RESPONSIVE RULES
+============================== */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 10;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .hero-main-image {
+    width: 55%;
+    min-width: 200px;
+  }
+   .desktop-menu {
+    display: none;
+  }
+  .hero-title {
+    position: relative;
+    margin-top: 70px; /* space below hamburger */
+    text-align: center;
+    font-size: clamp(1.8rem, 8vw, 3.5rem);
+    z-index: 5;
+  }
+  .hero-text-wrapper {
+    flex-direction: column;
+    padding-bottom: 20px;
+    gap: 20px;
+  }
+
+  .hero-text-left,
+  .hero-text-right {
+    position: static !important; /* let them flow naturally */
+    width: 100% !important;
+    text-align: center !important;
+    transform: none !important;
+    margin-bottom: 20px;
+  }
+
+  .hero-text-wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-bottom: 20px !important; /* less bottom padding */
+  }
+
+  .hero-main-image {
+    position: static !important;  /* remove absolute */
+    width: 60% !important;
+    min-width: 200px !important;
+    margin: 0 auto 40px auto;
+    transform: none !important;
+  }
+    .skills-experiences {
+    align-items: flex-start; /* heading stays left */
+  }
+
+  .skills-experiences .card {
+    flex: 1 1 100%; /* full width */
+    transform: scale(0.9); /* zoom out */
+    margin: 0 auto; /* center the smaller card */
+  }
+
+  
+
+  .intro-text {
+    text-align: left !important; /* heading to the left */
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+
