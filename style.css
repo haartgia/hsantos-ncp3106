@@ -73,14 +73,20 @@ body, html {
 .hero-main-image {
   position: absolute;
   bottom: 0%;        /* anchor near bottom */
-  left: 50%;           /* center horizontally */
+  left: 48.4%;           /* center horizontally */
   transform: translateX(-50%);
-  max-width: 470px;
+  max-width: 490px;
   width: 40%;
   min-width: 370px;
   height: auto;
   z-index: 1;
+  transition: transform 0.25s cubic-bezier(0.2, 0.2, 0.2, 1);
 }
+
+.hero-main-image:hover {
+  transform: translateX(-50%) scale(1.02);
+}
+
 
 .hero-text-wrapper {
   position: relative;
@@ -101,10 +107,10 @@ body, html {
 /* Left text block */
 .hero-text-left {
   position: absolute;
-  top: 38%;
-  width: 34%;
+  top: 32%;
+  width: 32%;
   font-family: 'Sequel3', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: #2b2b2b;
   line-height: 1.6;
   text-align: justify;
@@ -121,7 +127,7 @@ body, html {
   text-align: justify;
   color: #2b2b2b;
   font-family: 'Sequel3', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   line-height: 1.6;
 }
 
@@ -259,16 +265,59 @@ body, html {
   justify-content: flex-start;
   overflow: hidden;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 40px 20px;
   gap: 40px; /* space between cards & heading */
+  min-height: 500px;
 }
 
+.skills-experiences .container,
+.skills-experiences .content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.skills-experiences .intro-text {
+  text-align: left !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
 .skills-experiences .card {
   box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-  padding: 30px;
-  min-height: 180px;
+  padding: 70px;
+  min-height: 280px;
   flex: 1 1 calc(33.333% - 40px);
-  transition: transform 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #f1ede8;
+  color: #2b2b2b;
+  overflow: hidden; /* ensures content doesn't overflow when scaled */
+}
+
+.skills-experiences .card-body {
+  transition: transform 0.2s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.skills-experiences .card:hover {
+  background-color: #232323;
+  color: #f1ede8;
+}
+
+.skills-experiences .card:hover .card-title,
+.skills-experiences .card:hover .card-text {
+  color: #f1ede8;
+}
+
+.skills-experiences .card:hover .card-body {
+  transform: scale(1.06);
+}
+
+.skills-experiences .card img[alt="GitHub"],
+.skills-experiences .card img[alt="Git"] {
+  transition: filter 0.3s;
+}
+
+.skills-experiences .card:hover img[alt="GitHub"],
+.skills-experiences .card:hover img[alt="Git"] {
+  filter: brightness(0) saturate(100%) invert(94%) sepia(2%) saturate(0%) hue-rotate(180deg) brightness(1.2);
 }
 
 .skills-experiences .hero-title {
@@ -366,15 +415,15 @@ body, html {
   .hero-title {
     position: relative;
     margin-bottom: 10px !important;
-    margin-top: 70px; /* space below hamburger */
+    margin-top: 120px; /* space below hamburger */
     text-align: center;
     font-size: clamp(1.8rem, 8vw, 3.5rem);
     z-index: 5;
   }
   .hero-text-wrapper {
+    gap: 8px !important; 
+     padding-bottom: 8px !important;
     flex-direction: column;
-    padding-bottom: 20px;
-    gap: 20px;
   }
 
   .hero-text-left,
@@ -397,7 +446,7 @@ body, html {
     display: none !important;
   }
 
-    .hero-text-right {
+    .hero-text-right, .hero-text-left {
     font-size: 1.05rem !important;
     padding: 0 10px !important;
     line-height: 1.7 !important;
@@ -423,6 +472,7 @@ body, html {
     text-align: left !important; /* heading to the left */
     padding-left: 0;
     margin-left: 0;
+    margin-top: 0px !important;
   }
     .hero-social-icons {
     justify-content: center !important;
