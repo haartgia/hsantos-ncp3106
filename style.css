@@ -75,9 +75,9 @@ body, html {
   bottom: 0%;        /* anchor near bottom */
   left: 50%;           /* center horizontally */
   transform: translateX(-50%);
-  max-width: 430px;
+  max-width: 470px;
   width: 40%;
-  min-width: 300px;
+  min-width: 370px;
   height: auto;
   z-index: 1;
 }
@@ -107,23 +107,44 @@ body, html {
   font-size: 1.1rem;
   color: #2b2b2b;
   line-height: 1.6;
-  text-align: left;
-  left: 50px;
+  text-align: justify;
+  left: 30px;
 }
 
 /* Right text block */
 .hero-text-right {
   position: absolute;
   top: 50%;
-  right: 50px;
+  right: 30px;
   width: 32%;
   transform: translateY(-50%);
-  text-align: right;
+  text-align: justify;
   color: #2b2b2b;
   font-family: 'Sequel3', sans-serif;
   font-size: 1.1rem;
   line-height: 1.6;
 }
+
+
+.hero-social-icons {
+  margin-top: 22px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.hero-social-icons img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.hero-social-icons img:hover {
+  transform: scale(1.15);
+}
+
 
 
 
@@ -179,15 +200,15 @@ body, html {
 
 .mobile-menu {
   display: none;
-  position: absolute;       /* absolute positioning */
-  top: 60px;               /* just below hamburger */
+  position: absolute;
+  top: 60px;
   right: 20px;
   flex-direction: column;
-  background: rgba(241, 237, 232, 0.95);
+  background: rgba(241, 237, 232, 0.98);
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 20;             /* higher than hero title */
+  z-index: 9999; /* Increased z-index to ensure it's on top */
   width: 150px;
 }
 
@@ -228,18 +249,18 @@ body, html {
 ============================== */
 .skills-experiences {
   width: calc(100% - 40px);
-  margin: 0 20px 20px 20px; /* top 0, right 20px, bottom 20px, left 20px */
-  top: 0;
+  margin: 0 20px 20px 20px;
+  top: 0%;
   position: relative;
   background-color: #cdc0b1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; /* align content to the left */
   justify-content: flex-start;
   overflow: hidden;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  gap: 40px;
+  gap: 40px; /* space between cards & heading */
 }
 
 .skills-experiences .card {
@@ -322,6 +343,7 @@ body, html {
    RESPONSIVE RULES
 ============================== */
 @media (max-width: 768px) {
+  
   .desktop-menu {
     display: none;
   }
@@ -343,6 +365,7 @@ body, html {
   }
   .hero-title {
     position: relative;
+    margin-bottom: 10px !important;
     margin-top: 70px; /* space below hamburger */
     text-align: center;
     font-size: clamp(1.8rem, 8vw, 3.5rem);
@@ -360,6 +383,7 @@ body, html {
     width: 100% !important;
     text-align: center !important;
     transform: none !important;
+    margin-top: 0 !important;
     margin-bottom: 20px;
   }
 
@@ -370,12 +394,19 @@ body, html {
   }
 
   .hero-main-image {
-    position: static !important;  /* remove absolute */
-    width: 60% !important;
-    min-width: 200px !important;
-    margin: 0 auto 40px auto;
-    transform: none !important;
+    display: none !important;
   }
+
+    .hero-text-right {
+    font-size: 1.05rem !important;
+    padding: 0 10px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 20px !important;
+    color: #2b2b2b !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+
     .skills-experiences {
     align-items: flex-start; /* heading stays left */
   }
@@ -392,6 +423,11 @@ body, html {
     text-align: left !important; /* heading to the left */
     padding-left: 0;
     margin-left: 0;
+  }
+    .hero-social-icons {
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
