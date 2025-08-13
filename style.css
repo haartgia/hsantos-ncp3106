@@ -346,13 +346,107 @@ body, html {
 }
 
 
+
+/* Odin's Crow Banner */
+.black-banner {
+  background: #f1ede8;
+  margin: 0 0 0 0;
+  padding: 0;
+  font-family: 'Sequel2', sans-serif;
+}
+
+.black-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: #2b2b2b;
+  padding: 6px 8px 0 8px;
+}
+
+
+.black-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0 0 0;
+  padding: 0 8px;
+}
+
+.black-lines div {
+  height: 6px;
+  background: #2b2b2b;
+  border-radius: 2px;
+}
+
+.black-lines div:first-child {
+  height: 1px;
+
+}
+.black-lines div:nth-child(2) {
+  height: 2px;
+}
+.black-lines div:nth-child(3) {
+  height: 6px;
+}
+.black-lines div:nth-child(4) {
+  height: 6px;
+}
+.black-lines div:nth-child(5) {
+  height: 6px;
+}
+.black-lines div:nth-child(6) {
+  height: 6px;
+}
+
+.black-cta {
+  background: #2b2b2b;
+  color: #ece8e3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px 24px 32px;
+  margin: 12px 8px 8px 8px;
+}
+
+.black-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.black-arrow {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-left: 24px;
+}
+
+
 /* ==============================
    CARDS
 ============================== */
+.school-card-wrapper {
+  width: calc(100% - 40px);
+  margin: 0 20px 20px 20px;
+  top: 0%;
+  position: relative;
+  background-color: #afa7a2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+  gap: 40px;
+  min-height: 500px;
+}
 .school-card {
-  border-radius: 15px;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s;
+  background-color: #afa7a2;
+    border: none !important;
+
 }
 
 .school-card:hover {
@@ -364,15 +458,45 @@ body, html {
 }
 
 .school-card .card-title {
-  font-family: 'OrionTwo', sans-serif;
+  font-family: 'Sequel2', sans-serif;
   font-size: 1.4rem;
   color: #2b2b2b;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  margin-left: -20px; /* pull title left to card edge */
+}
+
+.school-card .card-title::after {
+  content: "";
+  display: block;
+  height: 0.5px; /* thin line */
+  background-color: black;
+  width: calc(97.5% + 30px); /* span full card width */
 }
 
 .school-card .card-text {
-  font-size: 1rem;
+  font-family: 'Sequel3', sans-serif;
+  font-size: 0.8rem;
   color: #333;
+  margin-left: -20px; /* match title alignment */
 }
+
+.school-card .card-text span {
+  display: block;
+  position: relative;
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+}
+
+.school-card .card-text span::after {
+  content: "";
+  display: block;
+  height: 0.5px;
+  background-color: black;
+  width: calc(97.5% + 30px); /* extend past new margin */
+  margin-left: 0; /* already aligned by parent */
+}
+
 .content .intro-text {
   flex: 1 1 100%;
   font-size: clamp(1.8rem, 2.5vw, 2.4rem);
@@ -381,6 +505,26 @@ body, html {
   text-align: left;
 }
 
+.school-img-wrapper {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.school-img-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.school-img-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #afa7a2;
+  opacity: 0.38; /* Adjust for more/less color */
+  pointer-events: none;
+}
 
 
 
@@ -507,6 +651,38 @@ body, html {
     justify-content: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+
+    .black-title {
+    font-size: 1.5rem;
+  }
+  .black-arrow {
+    font-size: 2rem;
+  }
+  .black-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px 12px 18px 16px;
+  }
+
+    .school-card-wrapper {
+    width: 98vw;
+    margin: 10px 1vw 20px 1vw;
+    padding: 20px 4vw;
+    min-height: unset;
+    gap: 20px;
+  }
+  .school-card {
+    margin-bottom: 18px;
+    border: none !important;
+
+  }
+  .school-card .card-title {
+    font-size: 1.1rem;
+  }
+  .school-card .card-text {
+    font-size: 0.95rem;
   }
 }
 
