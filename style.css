@@ -527,7 +527,63 @@ body, html {
 }
 
 
+/* Add space between cards */
+#awardsCarousel .col-md-4 {
+  padding: 10px;
+}
 
+#awardsCarousel .row {
+  margin-left: -5px;
+  margin-right: -5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Center content inside cards and remove shadow */
+#awardsCarousel .card {
+  background-color: #c9c8c9;
+  color: #2b2b2b;
+  min-height: 250px;
+  display: flex;
+  align-items: center;      /* horizontal center */
+  justify-content: center;  /* vertical center */
+  text-align: center;
+  padding: 50px;
+  box-shadow: none !important; /* force-remove Bootstrap shadows */
+  border: none;              /* optional: removes border */
+}
+/* Make card body stretch so date is at bottom */
+#awardsCarousel .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* Push date text to the bottom */
+#awardsCarousel .card .card-text {
+  font-family: 'Sequel3', sans-serif;
+}
+
+/* Hover effect for cards */
+#awardsCarousel .card:hover {
+  background-color: #82887c;
+  transition: background-color 0.3s ease;
+}
+
+/* Change <small> text color on hover */
+#awardsCarousel .card:hover small {
+  color: #f1ede8 !important;
+  transition: color 0.3s ease;
+}
+
+/* Zoom in text on hover */
+#awardsCarousel .card:hover .card-title,
+#awardsCarousel .card:hover .card-text {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
 /* ==============================
    HEADER
 ============================== */
@@ -683,6 +739,14 @@ body, html {
   }
   .school-card .card-text {
     font-size: 0.95rem;
+  }
+
+    #awardsCarousel .col-md-4 {
+    flex: 0 0 100%; /* full width card */
+    max-width: 100%;
+  }
+  #awardsCarousel .card {
+    padding: 30px; /* smaller padding on mobile */
   }
 }
 
