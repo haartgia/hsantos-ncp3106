@@ -584,6 +584,158 @@ body, html {
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
+
+
+.card {
+    border: none;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    min-height: 250px; /* so they have a consistent base height */
+}
+
+/* Image styling */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dark overlay effect for text readability */
+.card-img-overlay {
+    background: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.overlay-hidden {
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.card:hover .overlay-hidden {
+    opacity: 1;
+}
+
+/* Card text styles */
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Space between cards */
+.gap-3 > .card {
+    margin-bottom: 15px;
+}
+
+.col-lg-6:nth-child(1) .card {
+    min-height: 350px; /* slightly taller than right column */
+}
+
+/* Taller right-column cards (Michael Brown & Sophia Wilson) */
+.col-lg-6:nth-child(2) .card {
+    min-height: 520px; /* increased from 250px */
+}
+
+.fixed-height-card {
+    height: 130px;
+    overflow: hidden;
+    position: relative;
+}
+
+.fixed-height-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fixed-height-card .card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Keeps image filling the card */
+  filter: blur(3px); /* Adjust the blur amount */
+  transition: filter 0.3s ease; /* Smooth effect on hover */
+}
+
+.fixed-height-card:hover .card-img-top {
+  filter: blur(0.5px); /* Clear image on hover if you want */
+}
+
+.fixed-height-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e5d5c3;
+  opacity: 0.3; /* Adjust intensity */
+  pointer-events: none;
+}
+
+/* Hide overlay text by default */
+.overlay-hidden {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5); /* dark overlay for better contrast */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show overlay text on hover */
+.fixed-height-card:hover .overlay-hidden {
+    opacity: 1;
+}
+
+
+.extra-info {
+  display: inline-block;
+  background-color: rgba(229, 213, 195, 0.85);
+ /* light bubble */
+  color: #333; /* text color */
+  padding: 4px 10px;
+  border-radius: 20px; /* makes it pill-shaped */
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 5px;
+}
+.bubble-dark {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background-color: #c9c8c9;
+  color: #2b2b2b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  user-select: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.bubble-dark:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
 /* ==============================
    HEADER
 ============================== */
@@ -599,6 +751,63 @@ body, html {
   font-family: 'Sequel1', sans-serif;
   font-size: 1.5rem;
   color: #2a2a2a;
+}
+
+
+
+/* ==============================
+   MODAL STYLES
+=============================== */
+
+.custom-modal {
+  background-color: #2b2b2b;
+  color: #f1ede8;
+}
+
+.custom-modal-size {
+  max-width: 800px; /* Adjust this as needed */
+}
+
+.custom-modal .modal-header,
+.custom-modal .modal-body {
+  border-color: rgba(241, 237, 232, 0.2);
+}
+
+.custom-modal .modal-title {
+  color: #f1ede8;
+  font-family: 'Sequel4', sans-serif;
+  font-weight: 200; /* Sequel2 */
+}
+
+.custom-modal .modal-body {
+  font-family: 'Sequel3', sans-serif;
+  font-weight: 20; /* Sequel3 */
+}
+
+.custom-modal .btn-close-white {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.carousel-img {
+  width: 100%;        /* fills carousel width */
+  height: 350px;      /* fixed height */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;        /* center */
+  max-width: 100%;       /* prevent stretching beyond original size */
+  height: auto;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 0.5em 0.75em;
+  border-radius: 50px;
+  background-color: #c9c8c9;
+  color: #000; /* black text for contrast */
+}
+.description-text {
+  text-align: justify;
+  font-size: 0.9rem; /* change this to adjust size (e.g., 0.9rem, 1.1rem) */
 }
 
 /* ==============================
@@ -748,5 +957,18 @@ body, html {
   #awardsCarousel .card {
     padding: 30px; /* smaller padding on mobile */
   }
+  col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* On mobile, keep same height for all */
+    .col-lg-6 .card {
+        min-height: 300px;
+    }
+      .carousel-img {
+    max-height: 200px; /* shorter height on mobile */
+  }
+    
 }
 

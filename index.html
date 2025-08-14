@@ -383,6 +383,139 @@
     <hr class="intro-line" />
   </div>
 
+<!-- Cards Section -->
+<div class="container">
+  <div class="row">
+    
+    <!-- Left column (3 cards) -->
+    <div class="col-lg-6 d-flex flex-column gap-3">
+      <div class="card text-white fixed-height-card" data-bs-toggle="modal" data-bs-target="#modalBionote">
+        <img src="assets/bionotefront.png" class="card-img-top" alt="Bionote">
+        <div class="card-img-overlay overlay-hidden">
+          <h5 class="card-title">First Bionote</h5>
+          <p class="card-text">A brief self-introduction created using HTML and CSS.</p>
+          <div class="bubble-row">
+<span class="bubble-dark">HTML</span>
+<span class="bubble-dark">CSS</span>
+
+
+</div>
+        </div>
+      </div>
+
+      <div class="card text-white fixed-height-card" data-bs-toggle="modal" data-bs-target="#modalTen">
+        <img src="assets/10secsfront.png" class="card-img-top" alt="John Doe">
+        <div class="card-img-overlay overlay-hidden">
+          <h5 class="card-title">10-Seconds Game</h5>
+          <p class="card-text">A simple 10-Seconds Game Exploring Basic Python</p>
+          <div class="bubble-row"><span class="bubble-dark">Python</span></div>
+          
+        </div>
+      </div>
+
+      <div class="card text-white fixed-height-card" data-bs-toggle="modal" data-bs-target="#modalJane">
+        <img src="assets/multiplegamefront.png" class="card-img-top" alt="Jane Smith">
+        <div class="card-img-overlay overlay-hidden">
+          <h5 class="card-title">Android Multiple Game</h5>
+          <p class="card-text">Games consisting of In-between, Tic-Tac-Toe, and Hi-Lo. </p>
+          <div class="bubble-row"><span class="bubble-dark">Kotlin</span>
+            <span class="bubble-dark">Java</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right column (2 cards) -->
+    <div class="col-lg-6 d-flex flex-column gap-3">
+      <div class="card text-white fixed-height-card" data-bs-toggle="modal" data-bs-target="#modalMichael">
+        <img src="assets/profilefront1.png" class="card-img-top" alt="Android Profile">
+        <div class="card-img-overlay overlay-hidden">
+          <h5 class="card-title">Android Profile</h5>
+          <p class="card-text">Simple "About Me" Android Application.</p>
+          <div class="bubble-row"><span class="bubble-dark">Kotlin</span>
+            <span class="bubble-dark">Java</span></div>
+        </div>
+      </div>
+
+      <div class="card text-white fixed-height-card" data-bs-toggle="modal" data-bs-target="#modalSophia">
+        <img src="assets/highlowandroidfront.png" class="card-img-top" alt="Sophia Wilson">
+        <div class="card-img-overlay overlay-hidden">
+          <h5 class="card-title">Android High Low Game</h5>
+          <p class="card-text">Simple High Low Game Application.</p>
+          <div class="bubble-row"><span class="bubble-dark">Kotlin</span>
+            <span class="bubble-dark">Java</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Example Modal -->
+<div class="modal fade" id="modalBionote" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog custom-modal-size">
+    <div class="modal-content custom-modal">
+      <div class="modal-header">
+        <h5 class="modal-title">Bionote</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+
+        <div id="bionoteCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/bionotefront.png" class="d-block carousel-img" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/bionote2.png" class="d-block carousel-img" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/bionote3.png" class="d-block carousel-img" alt="Image 3">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/bionote4.png" class="d-block carousel-img" alt="Image 4">
+            </div>
+          </div>
+
+          <!-- Side Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#bionoteCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#bionoteCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+
+        <!-- Description Area -->
+<div class="row mt-3 align-items-center">
+  <!-- Left Side -->
+  <div class="col-md-8">
+    <p class="description-text mb-0">
+      This is my very first bionote, crafted with passion using HTML and CSS.  
+      I created it in 2025 as a personal project, adding thoughtful details about myself  
+      to give it a personal and creative touch.
+    </p>
+  </div>
+
+  <!-- Right Side -->
+  <div class="col-md-4 text-md-end mt-3 mt-md-0">
+    <div class="mb-1">
+      <strong>Made with:</strong>
+      <span class="badge">HTML</span>
+      <span class="badge">CSS</span>
+    </div>
+    <small class="text-muted">Development Year: 2025</small>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
   <!-- Toggle Mobile Menu Script -->
   <script>
     function toggleMenu() {
