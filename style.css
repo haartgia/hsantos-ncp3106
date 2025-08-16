@@ -11,18 +11,6 @@ body, html {
 }
 
 @font-face {
-  font-family: 'Orion';
-  src: url('fonts/Orion.otf') format('opentype');
-}
-@font-face {
-  font-family: 'OrionTwo';
-  src: url('fonts/Oriontwo.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Moonscape';
-  src: url('fonts/Moonscape.otf') format('opentype');
-}
-@font-face {
   font-family: 'Sequel1';
   src: url('fonts/Sequel100Black-115.ttf') format('truetype');
 }
@@ -170,53 +158,66 @@ body, html {
 /* ==============================
    NAVIGATION
 ============================== */
-.hero-nav {
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  max-width: 600px;
-}
-
-.nav-button,
-.nav-btn {
-  font-family: 'Sequel2', sans-serif;
-  text-decoration: none;
-  color: #2a2a2a;
-  background-color: #f1ede8;
-  border-radius: 10px;
-  margin: 3px;
-  padding: 15px 15px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-
-.nav-button:hover,
-.nav-btn:hover {
-  background-color: #afa7a2;
-}
-
-.btn-check:checked + .nav-btn {
-  background-color: #c9c8c9;
-}
-
 .desktop-menu {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
+.hero-nav {
 
+  position: fixed;
+  top: 0;
+  left: 0; /* start from left */
+  right: 0; /* stretch to right */
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(241, 237, 232, 0.95);
+  padding: 12px 15px;
+    transition: transform 0.4s ease;
+  border-radius: 0; /* remove rounded edges */
+  width: 100%; /* take full width */
+  max-width: 100%; /* no max limit */
+}
+
+/* Hidden when scrolling down */
+.hero-nav.hide {
+  transform: translateY(-400%); /* slide fully up */
+
+}
+
+.desktop-menu {
+  display: flex;
+  gap: 10px;
+}
+/* Buttons */
+.nav-btn {
+  font-family: 'Sequel2', sans-serif;
+  text-decoration: none;
+  color: #2a2a2a !important;
+  background-color: #f1ede8;
+  border-radius: 10px;
+  margin: 3px;
+  padding: 12px 15px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.nav-btn:hover {
+  background-color: #afa7a2;
+}
+
+/* Mobile toggle */
+/* Hamburger menu (hidden by default) */
 .hamburger {
   display: none;
   font-size: 30px;
   cursor: pointer;
 }
 
+/* Mobile menu (hidden until toggled) */
 .mobile-menu {
   display: none;
   position: absolute;
@@ -227,13 +228,22 @@ body, html {
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 9999; /* Increased z-index to ensure it's on top */
+  z-index: 9999;
   width: 150px;
+  animation: slideIn 0.3s ease;
+}
+.mobile-menu.show {
+  display: flex;
+  max-height: 500px; /* large enough to fit all links */
+}
+.mobile-menu a {
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
 }
 
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+.mobile-menu a:last-child {
+  border-bottom: none;
 }
 
 /* ==============================
@@ -526,6 +536,37 @@ body, html {
   pointer-events: none;
 }
 
+.see-more-btn {
+  background-color: #2b2b2b;
+  color: #afa7a2;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  margin-left: -20px;;
+  transition: all 0.3s ease;
+}
+
+.see-more-btn:hover {
+  background-color: #afa7a2;
+  color: #2b2b2b;
+}
+
+.collapsible-text {
+  border: 1px solid #2b2b2b;
+  padding: 10px;
+  border-radius: 5px;
+  color: #2b2b2b;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.see-more-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
 
 /* Add space between cards */
 #awardsCarousel .col-md-4 {
@@ -809,23 +850,221 @@ body, html {
   text-align: justify;
   font-size: 0.9rem; /* change this to adjust size (e.g., 0.9rem, 1.1rem) */
 }
+.carousel-vertical .carousel-inner {
+  display: flex;
+  flex-direction: column;
+  height: 400px; /* Adjust height */
+}
+.carousel-vertical .carousel-item {
+  flex: 0 0 100%;
+}
+.vertical-control {
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+}
+.carousel-control-prev.vertical-control {
+  top: -40px; /* Adjust distance above carousel */
+}
+.carousel-control-next.vertical-control {
+  bottom: -40px; /* Adjust distance below carousel */
+}
+.vertical-arrow {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+.vertical-arrow:hover {
+  color: #ffc107;
+}
+
+#multipleGameCarousel .carousel-inner {
+  display: flex;
+  justify-content: center; /* horizontally center images */
+}
+
+#multipleGameCarousel .carousel-item img {
+  display: block;
+  max-height: 400px; /* adjust as needed */
+  width: auto;
+  margin: 0 auto; /* center image */
+}
+
+#multipleGameCarousel .carousel-control-prev,
+#multipleGameCarousel .carousel-control-next {
+  top: 50%; /* center vertically relative to carousel */
+  transform: translateY(-50%);
+  width: auto;
+  height: auto;
+}
+
+#multipleGameCarousel .carousel-control-prev-icon,
+#multipleGameCarousel .carousel-control-next-icon {
+  background-size: 100%, 100%; /* keep arrow visible */
+}
+
+#myAccordion .accordion-item {
+    background-color: #2b2b2b; /* card background */
+    border: none;
+    font-family: "Sequel3", sans-serif;
+}
+
+#myAccordion .accordion-button {
+    background-color: #82887c;
+    color: #f1ede8;
+    font-family: "Sequel3", sans-serif;
+    box-shadow: none;
+}
+
+#myAccordion .accordion-button:not(.collapsed) {
+    background-color: #82887c;
+    color: #f1ede8;
+}
+
+#myAccordion .accordion-collapse {
+  padding: 5px; /* space between body and edges */
+  background-color: #f1ede8;
+}
+
+#myAccordion .accordion-body,
+#myAccordion .card-body {
+    background-color: #a2a7a1;
+    color: #2b2b2b;
+    font-family: "Sequel3", sans-serif;
+}
+
+#myAccordion .accordion-button:focus {
+    box-shadow: none;
+    border: none;
+}
+
+#myAccordion .accordion-button::after {
+    background-image: none; /* remove default Bootstrap arrow */
+    content: "\25BC"; /* ▼ Unicode arrow */
+    font-size: 0.9rem;
+    color: #f1ede8; /* same as text color */
+    margin-left: auto; /* push to the right */
+    transition: transform 0.3s ease; /* smooth rotate */
+}
+
+#myAccordion .accordion-button:not(.collapsed)::after {
+    transform: rotate(-180deg); /* flip when open */
+}
+
+
+/* ==============================
+   Contacts
+============================== */
+.contact-container {
+  width: calc(100% - 40px);
+  margin: 0 20px 40px 20px;
+  background-color: #afa7a2;
+  color: #2b2b2b;
+  font-family: "Sequel3", sans-serif;
+    padding: 40px;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+/* Left side */
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-info h2 {
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;   /* makes each icon its own block */
+  text-decoration: none;   /* removes underline */
+  background: none;        /* removes default blue highlight */
+}
+
+.social-icons a img {
+  display: block;          /* removes bottom inline spacing */
+  width: 32px;
+  height: 32px;
+  margin-right: 15px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+/* Right side (form) */
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-family: "Sequel3", sans-serif;
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #2b2b2b;
+  color: #f1ede8;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: "Sequel3", sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #82887c;
+}
+
+.contact-container .content {
+  margin-left: -30px;   /* matches your hero’s margin */
+}
+
 
 /* ==============================
    RESPONSIVE RULES
 ============================== */
 @media (max-width: 768px) {
-  
   .desktop-menu {
-    display: none;
+    display: none; /* hide desktop nav on small screens */
   }
+
   .hamburger {
-    display: block;
+    display: block; /* show hamburger */
     position: absolute;
-    top: 15px;
     right: 20px;
-    z-index: 10;
-    font-size: 30px;
-    cursor: pointer;
+    top: 15px;
   }
   .hero-main-image {
     width: 55%;
@@ -837,10 +1076,13 @@ body, html {
   .hero-title {
     position: relative;
     margin-bottom: 10px !important;
-    margin-top: 120px; /* space below hamburger */
+    margin-top: 50px; /* space below hamburger */
     text-align: center;
-    font-size: clamp(1.8rem, 8vw, 3.5rem);
+    font-size: clamp(2rem, 9vw, 2rem);
     z-index: 5;
+    line-height: 1.3;
+    padding: 0px -20px;
+
   }
   .hero-text-wrapper {
     gap: 8px !important; 
@@ -969,6 +1211,21 @@ body, html {
       .carousel-img {
     max-height: 200px; /* shorter height on mobile */
   }
+  .contact-form form {
+    align-items: stretch; /* normal full width on desktop */
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    max-width: 100%;
+    font-size: 18px;
+  }
     
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 

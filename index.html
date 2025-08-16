@@ -12,40 +12,36 @@
   <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
+
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-
-  <!-- Navigation Buttons -->
-  <div class="hero" id="home">
-
     <!-- Navigation inside hero -->
-    <div class="hero-nav">
+<nav class="hero-nav">
+  <!-- Desktop menu -->
+  <div class="desktop-menu">
+    <a href="#home" class="nav-btn">Home</a>
+    <a href="#about" class="nav-btn">About Me</a>
+    <a href="#projects" class="nav-btn">Projects</a>
+    <a href="#contact" class="nav-btn">Contacts</a>
+  </div>
 
-      <!-- Hamburger icon -->
-      <div class="hamburger" onclick="toggleMenu()">
-        &#9776;
-      </div>
+  <!-- Hamburger (mobile only) -->
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
 
-      <!-- Mobile menu -->
-      <div class="mobile-menu" id="mobileMenu" style="display: none;">
-        <label class="nav-btn">Home</label>
-        <label class="nav-btn">About Me</label>
-        <label class="nav-btn">Projects</label>
-        <label class="nav-btn">Contacts</label>
-      </div>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="nav-btn">Home</a>
+    <a href="#about" class="nav-btn">About Me</a>
+    <a href="#projects" class="nav-btn">Projects</a>
+    <a href="#contact" class="nav-btn">Contacts</a>
+  </div>
+</nav>
+  <!-- Navigation Buttons -->
+  <div class="hero" id="home" section id="home">
 
-      <!-- Desktop menu -->
-      <div class="desktop-menu">
-        <label class="nav-btn">Home</label>
-        <label class="nav-btn">About Me</label>
-        <label class="nav-btn">Projects</label>
-        <label class="nav-btn">Contacts</label>
-      </div>
-
-    </div>
 
     <!-- Title -->
     <h1 class="hero-title">Heart Gia Santos</h1>
@@ -90,7 +86,7 @@
   <div class="skills-experiences" id="skills-experiences">
 
     <div class="container mt-4">
-      <div class="content">
+      <div class="content" section id="about">
         <h1 class="intro-text">Expertise</h1>
         <hr class="intro-line" />
       </div>
@@ -175,55 +171,94 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
       <!-- OLOPSC Card -->
-      <div class="col">
-        <div class="card school-card text-start h-100">
-<div class="school-img-wrapper">
-  <img src="assets/olopscpic.jpg" class="card-img-top" alt="OLOPSC">
-</div>          <div class="card-body">
-            <h5 class="card-title">OLOPSC</h5>
-<p class="card-text">
-  <span><i class="bi bi-emoji-smile"></i>   Our Lady of Perpetual Succor College</span>
-  <span><i class="bi bi-emoji-smile"></i>   Kinder to Junior High School</span>
-  <span><i class="bi bi-emoji-smile"></i>   SY 2009-2020</span>
-</p>
-            <a href="#" class="btn btn-primary">See More</a>
-          </div>
+<div class="col">
+  <div class="card school-card text-start h-100">
+    <div class="school-img-wrapper">
+      <img src="assets/olopscpic.jpg" class="card-img-top" alt="OLOPSC">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">OLOPSC</h5>
+      <p class="card-text">
+        <span><i class="bi bi-emoji-smile"></i> Our Lady of Perpetual Succor College</span>
+        <span><i class="bi bi-emoji-smile"></i> Kinder to Junior High School</span>
+        <span><i class="bi bi-emoji-smile"></i> SY 2009-2020</span>
+      </p>
+
+      <!-- Collapsible text FIRST -->
+      <div class="collapse mb-2" id="olopscMore">
+        <div class="collapsible-text">
+          Completed Grade 7 to Grade 10 with honors and first explored basic HTML skills.
         </div>
       </div>
 
+      <!-- See More button BELOW -->
+      <a class="btn see-more-btn" data-bs-toggle="collapse" href="#olopscMore" role="button" aria-expanded="false" aria-controls="olopscMore">
+        See More
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
       <!-- FEU Roosevelt Card -->
       <div class="col">
-        <div class="card school-card text-left h-100">
-<div class="school-img-wrapper">
-  <img src="assets/feupic.jpg" class="card-img-top" alt="OLOPSC">
-</div>          <div class="card-body">
+        <div class="card school-card text-start h-100">
+          <div class="school-img-wrapper">
+            <img src="assets/feupic.jpg" class="card-img-top" alt="FEU Roosevelt Marikina">
+          </div>
+          <div class="card-body">
             <h5 class="card-title">FEUR - M</h5>
-<p class="card-text">
-  <span><i class="bi bi-emoji-smile"></i>   FEU Roosevelt Marikina</span>
-  <span><i class="bi bi-emoji-smile"></i>   Senior High School</span>
-  <span><i class="bi bi-emoji-smile"></i>   SY 2021-2023</span>
-</p>
-            <a href="#" class="btn btn-primary">See More</a>
+            <p class="card-text">
+              <span><i class="bi bi-emoji-smile"></i> FEU Roosevelt Marikina</span>
+              <span><i class="bi bi-emoji-smile"></i> Senior High School</span>
+              <span><i class="bi bi-emoji-smile"></i> SY 2021-2023</span>
+            </p>
+
+            <!-- Collapsible text FIRST -->
+            <div class="collapse mb-2" id="feuMore">
+              <div class="collapsible-text">
+                Completed Senior High School and graduated with High Honors.
+              </div>
+            </div>
+
+            <!-- See More button BELOW -->
+            <a class="btn see-more-btn" data-bs-toggle="collapse" href="#feuMore" role="button" aria-expanded="false" aria-controls="feuMore">
+              See More
+            </a>
           </div>
         </div>
       </div>
 
       <!-- UE Card -->
       <div class="col">
-        <div class="card school-card text-left h-100">
-<div class="school-img-wrapper">
-  <img src="assets/uepic.png" class="card-img-top" alt="OLOPSC">
-</div>          <div class="card-body">
+        <div class="card school-card text-start h-100">
+          <div class="school-img-wrapper">
+            <img src="assets/uepic.png" class="card-img-top" alt="UE Manila">
+          </div>
+          <div class="card-body">
             <h5 class="card-title">UE Manila</h5>
-<p class="card-text">
-  <span><i class="bi bi-emoji-smile"></i>   University of the East - Manila</span>
-  <span><i class="bi bi-emoji-smile"></i>   College</span>
-  <span><i class="bi bi-emoji-smile"></i>   SY 2023-Present</span>
-</p>
-            <a href="#" class="btn btn-primary">See More</a>
+            <p class="card-text">
+              <span><i class="bi bi-emoji-smile"></i> University of the East - Manila</span>
+              <span><i class="bi bi-emoji-smile"></i> College</span>
+              <span><i class="bi bi-emoji-smile"></i> SY 2023-Present</span>
+            </p>
+
+            <!-- Collapsible text FIRST -->
+            <div class="collapse mb-2" id="ueMore">
+              <div class="collapsible-text">
+                Continuously learning technical and programming skills needed as a Computer Engineer.
+              </div>
+            </div>
+
+            <!-- See More button BELOW -->
+            <a class="btn see-more-btn" data-bs-toggle="collapse" href="#ueMore" role="button" aria-expanded="false" aria-controls="ueMore">
+              See More
+            </a>
           </div>
         </div>
       </div>
+
 
     </div>
   </div>
@@ -378,7 +413,7 @@
     </button>
   </div>
 
-    <div class="content">
+    <div class="content" section id="projects">
     <h1 class="intro-text">Highlighted Projects</h1>
     <hr class="intro-line" />
   </div>
@@ -413,7 +448,7 @@
         </div>
       </div>
 
-      <div class="card text-white fixed-height-card" data-bs-toggle="modal" data-bs-target="#modalJane">
+      <div class="card text-white fixed-height-card" data-bs-toggle="modal" data-bs-target="#modalMul">
         <img src="assets/multiplegamefront.png" class="card-img-top" alt="Jane Smith">
         <div class="card-img-overlay overlay-hidden">
           <h5 class="card-title">Android Multiple Game</h5>
@@ -426,7 +461,7 @@
 
     <!-- Right column (2 cards) -->
     <div class="col-lg-6 d-flex flex-column gap-3">
-      <div class="card text-white fixed-height-card" data-bs-toggle="modal" data-bs-target="#modalMichael">
+      <div class="card text-white fixed-height-card" data-bs-toggle="modal" data-bs-target="#modalAndProf">
         <img src="assets/profilefront1.png" class="card-img-top" alt="Android Profile">
         <div class="card-img-overlay overlay-hidden">
           <h5 class="card-title">Android Profile</h5>
@@ -436,7 +471,7 @@
         </div>
       </div>
 
-      <div class="card text-white fixed-height-card" data-bs-toggle="modal" data-bs-target="#modalSophia">
+      <div class="card text-white fixed-height-card" data-bs-toggle="modal" data-bs-target="#modalHighLow">
         <img src="assets/highlowandroidfront.png" class="card-img-top" alt="Sophia Wilson">
         <div class="card-img-overlay overlay-hidden">
           <h5 class="card-title">Android High Low Game</h5>
@@ -450,7 +485,7 @@
   </div>
 </div>
 
-<!-- Example Modal -->
+<!-- Bionote Modal -->
 <div class="modal fade" id="modalBionote" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog custom-modal-size">
     <div class="modal-content custom-modal">
@@ -460,7 +495,7 @@
       </div>
       <div class="modal-body">
 
-        <div id="bionoteCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div id="bionoteCarousel1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="assets/bionotefront.png" class="d-block carousel-img" alt="Image 1">
@@ -477,35 +512,32 @@
           </div>
 
           <!-- Side Controls -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#bionoteCarousel" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#bionoteCarousel1" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#bionoteCarousel" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#bionoteCarousel1" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
           </button>
         </div>
 
         <!-- Description Area -->
-<div class="row mt-3 align-items-center">
-  <!-- Left Side -->
-  <div class="col-md-8">
-    <p class="description-text mb-0">
-      This is my very first bionote, crafted with passion using HTML and CSS.  
-      I created it in 2025 as a personal project, adding thoughtful details about myself  
-      to give it a personal and creative touch.
-    </p>
-  </div>
-
-  <!-- Right Side -->
-  <div class="col-md-4 text-md-end mt-3 mt-md-0">
-    <div class="mb-1">
-      <strong>Made with:</strong>
-      <span class="badge">HTML</span>
-      <span class="badge">CSS</span>
-    </div>
-    <small class="text-muted">Development Year: 2025</small>
-  </div>
-</div>
+        <div class="row mt-3 align-items-center">
+          <div class="col-md-8">
+            <p class="description-text mb-0">
+              This is my very first bionote, crafted with passion using HTML and CSS.  
+              I created it in 2025 as a personal project, adding thoughtful details about myself  
+              to give it a personal and creative touch.
+            </p>
+          </div>
+          <div class="col-md-4 text-md-end mt-3 mt-md-0">
+            <div class="mb-1">
+              <strong>Made with:</strong>
+              <span class="badge">HTML</span>
+              <span class="badge">CSS</span>
+            </div>
+            <small class="text-muted">Development Year: 2025</small>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -513,15 +545,391 @@
 </div>
 
 
+<!-- 10-Seconds Game Modal -->
+<div class="modal fade" id="modalTen" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog custom-modal-size">
+    <div class="modal-content custom-modal">
+      <div class="modal-header">
+        <h5 class="modal-title">10-Seconds Game</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+
+        <div id="tenSecondsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="assets/kirby1.jpg" class="d-block carousel-img" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/kirby2.jpg" class="d-block carousel-img" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/kirby3.jpg" class="d-block carousel-img" alt="Image 3">
+            </div>
+          </div>
+
+          <!-- Side Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#tenSecondsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#tenSecondsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+
+        <!-- Description Area -->
+        <div class="row mt-3 align-items-center">
+          <div class="col-md-8">
+            <p class="description-text mb-0">
+              Race against the clock in my 10-Seconds Game, built in 2023 with Python Tkinter.  
+              You’ve got just 10 seconds to act before time’s up—no pressure!  
+              Simple to play, tough to master, and addictively fun.
+            </p>
+          </div>
+          <div class="col-md-4 text-md-end mt-3 mt-md-0">
+            <div class="mb-1">
+              <strong>Made with:</strong>
+              <span class="badge">Python Tkinter</span>
+            </div>
+            <small class="text-muted">Development Year: 2023</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Android Multiple Game Modal -->
+<div class="modal fade" id="modalMul" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog custom-modal-size modal-dialog-scrollable">
+    <div class="modal-content custom-modal" style="height: 90vh;"> <!-- Taller modal -->
+      <div class="modal-header">
+        <h5 class="modal-title">Android Multiple Game</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="row align-items-center" style="height: 100%;">
+          <!-- Carousel (Left) -->
+          <div class="col-md-6">
+            <div id="multipleGameCarousel" class="carousel slide h-100 d-flex align-items-center" data-bs-ride="carousel" data-bs-interval="2000">
+  <div class="carousel-inner h-100 d-flex align-items-center">
+    <div class="carousel-item active">
+      <img src="assets/mul1.png" class="d-block" alt="Multiple Game Image 1" 
+           style="max-height: 80vh; object-fit: contain; margin-left: -120px; margin-right: auto; display: block;">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/mul2.png" class="d-block" alt="Multiple Game Image 2" 
+           style="max-height: 80vh; object-fit: contain; margin-left: -120px; margin-right: auto; display: block;">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/mul3.png" class="d-block" alt="Multiple Game Image 3" 
+           style="max-height: 80vh; object-fit: contain; margin-left: -120px; margin-right: auto; display: block;">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/mul4.png" class="d-block" alt="Multiple Game Image 4" 
+           style="max-height: 80vh; object-fit: contain; margin-left: -120px; margin-right: auto; display: block;">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/mul6.png" class="d-block" alt="Multiple Game Image 6" 
+           style="max-height: 80vh; object-fit: contain; margin-left: -120px; margin-right: auto; display: block;">
+    </div>
+  </div>
+
+              <!-- Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#multipleGameCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#multipleGameCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Description (Right) -->
+          <div class="col-md-6 d-flex flex-column justify-content-center">
+            <p class="description-text mb-3">
+              A triple challenge in one app—In-between, Tic-Tac-Toe, and Hi-Lo!  
+              Built in 2024 using Android Studio with Java and Kotlin,  
+              it’s a fun mix that keeps players guessing, thinking, and winning.
+            </p>
+            <div class="mb-1">
+              <strong>Made with:</strong>
+              <span class="badge">Java</span>
+              <span class="badge">Kotlin</span>
+              <span class="badge">Android Studio</span>
+            </div>
+            <small class="text-muted">Development Year: 2024</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Android Profile Modal -->
+<div class="modal fade" id="modalAndProf" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog custom-modal-size modal-dialog-scrollable">
+    <div class="modal-content custom-modal" style="height: 90vh;"> <!-- Taller modal -->
+      <div class="modal-header">
+        <h5 class="modal-title">Android "About Me" Profile</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="row align-items-center" style="height: 100%;">
+          <!-- Carousel (Left) -->
+          <div class="col-md-6">
+            <div id="AndProfCarousel" class="carousel slide h-100 d-flex align-items-center" data-bs-ride="carousel" data-bs-interval="2000">
+              <div class="carousel-inner h-100 d-flex align-items-center">
+                <div class="carousel-item active">
+                  <img src="assets/profilefront.png" class="d-block" alt="Profile Android Image 1" 
+                       style="max-height: 80vh; object-fit: contain; margin-left: 70px; margin-right: auto; display: block;">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/profile2.png" class="d-block" alt="Profile Android Image 2" 
+                       style="max-height: 80vh; object-fit: contain; margin-left: 70px; margin-right: auto; display: block;">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/profile3.png" class="d-block" alt="Profile Android Image 3" 
+                       style="max-height: 80vh; object-fit: contain; margin-left: 70px; margin-right: auto; display: block;">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/profile4.png" class="d-block" alt="Profile Android Image 4" 
+                       style="max-height: 80vh; object-fit: contain; margin-left: 70px; margin-right: auto; display: block;">
+                </div>
+    
+              </div>
+
+              <!-- Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#AndProfCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#AndProfCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Description (Right) -->
+          <div class="col-md-6 d-flex flex-column justify-content-center">
+            <p class="description-text mb-3">
+              An app all about me, crafted in Android Studio.
+              Built with Kotlin and Java for a smooth, modern experience.
+              Quick to explore, interactive, and visually engaging.
+              My journey and skills, all in the palm of your hand.
+            </p>
+            <div class="mb-1">
+              <strong>Made with:</strong>
+              <span class="badge">Java</span>
+              <span class="badge">Kotlin</span>
+              <span class="badge">Android Studio</span>
+            </div>
+            <small class="text-muted">Development Year: 2024</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!---->
+<div class="modal fade" id="modalHighLow" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog custom-modal-size modal-dialog-scrollable">
+    <div class="modal-content custom-modal" style="height: 90vh;"> <!-- Taller modal -->
+      <div class="modal-header">
+        <h5 class="modal-title">High-Low Game</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="row align-items-center" style="height: 100%;">
+          <!-- Carousel (Left) -->
+          <div class="col-md-6">
+            <div id="HighlowCarousel" class="carousel slide h-100 d-flex align-items-center" data-bs-ride="carousel" data-bs-interval="2000">
+              <div class="carousel-inner h-100 d-flex align-items-center">
+                <div class="carousel-item active">
+                  <img src="assets/highlow1.png" class="d-block" alt="Highlow Image 1" 
+                       style="max-height: 80vh; object-fit: contain; margin-left: 70px; margin-right: auto; display: block;">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/highlow2.png" class="d-block" alt="Highlow Image 2" 
+                       style="max-height: 80vh; object-fit: contain; margin-left: 70px; margin-right: auto; display: block;">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/highlow3.png" class="d-block" alt="Highlow Image 3" 
+                       style="max-height: 80vh; object-fit: contain; margin-left: 70px; margin-right: auto; display: block;">
+                </div>
+                <div class="carousel-item">
+                  <img src="assets/highlow4.png" class="d-block" alt="Highlow Image 4" 
+                       style="max-height: 80vh; object-fit: contain; margin-left: 70px; margin-right: auto; display: block;">
+                </div>
+    
+              </div>
+
+              <!-- Controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#HighlowCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#HighlowCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Description (Right) -->
+          <div class="col-md-6 d-flex flex-column justify-content-center">
+            <p class="description-text mb-3">
+            The High-Low Game is a simple yet fun number guessing challenge built in Android Studio.
+            Developed using Kotlin and Java, it delivers smooth gameplay and a clean interface.
+            Players guess whether the next number is higher or lower, testing both luck and intuition.
+            A lightweight app that proves how engaging classic games can be on mobile.
+            </p>
+            <div class="mb-1">
+              <strong>Made with:</strong>
+              <span class="badge">Java</span>
+              <span class="badge">Kotlin</span>
+              <span class="badge">Android Studio</span>
+            </div>
+            <small class="text-muted">Development Year: 2024</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="content">
+    <h1 class="intro-text">FAQs</h1>
+    <hr class="intro-line" />
+  </div>
+<div class="accordion mx-4 mb-4" id="myAccordion">
+    <div class="accordion" id="myAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne">1. Why did you choose Computer Engineering?</button>									
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                <div class="card-body">
+                    <p>I chose Computer Engineering because it combines both hardware and software, allowing me to explore everything from coding applications to building networks and systems.</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">2. How do you keep improving your skills?</button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#myAccordion">
+                <div class="card-body">
+                    <p>I constantly practice through personal projects, online courses, and coding challenges. I also enjoy experimenting with new tools and applying them to real-world problems.</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree">3. What makes your portfolio unique?</button>                     
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                <div class="card-body">
+                    <p>My portfolio highlights not just my academic work, but also my personal projects where I explore creativity, problem-solving, and practical applications of my skills in Python, Java, Kotlin, web development, SQL, and networking.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="contact-container" section id="contact">
+  <div class="contact-content">
+    <!-- Left Side -->
+    <div class="contact-info">
+      <div class="content">
+        <h1 class="intro-text">Contact Me</h1>
+        <hr class="intro-line" />
+      </div>
+      <p>Let’s keep it simple — I like building cool things, learning new ideas, and working with people who are just as curious. If you’ve got a project, a question, or even just a thought worth sharing, I’d be glad to hear from you.</p>
+
+      <!-- Social Icons (as images) -->
+      <div class="social-icons">
+        <a href="https://facebook.com/heartgiasantos" target="_blank">
+          <img src="assets/facebook (1).png" alt="Facebook">
+        </a>
+        <a href="https://instagram.com/heartgia" target="_blank">
+          <img src="assets/instagram (1).png" alt="Instagram">
+        </a>
+        <a href="https://github.com/haartgia" target="_blank">
+          <img src="assets/githubicon.png" alt="GitHub">
+        </a>
+        <a href="mailto:santos.heartgia@ue.edu.ph">
+          <img src="assets/email.png" alt="Email">
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>
+
 
 
 
   <!-- Toggle Mobile Menu Script -->
   <script>
+
     function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     }
+  const nav = document.querySelector(".hero-nav");
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  let lastScroll = 0;
+
+  window.addEventListener("scroll", () => {
+    let currentScroll = window.scrollY;
+
+    if (currentScroll > lastScroll && currentScroll > 80) {
+      // scrolling down
+      nav.classList.add("hide");
+    } else {
+      // scrolling up
+      nav.classList.remove("hide");
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  // Toggle mobile menu
+  hamburger.addEventListener("click", () => {
+    mobileMenu.style.display =
+      mobileMenu.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Close mobile menu when link clicked
+  document.querySelectorAll(".mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.style.display = "none";
+    });
+  });
+
+  function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("show");
+}
   </script>
 
 </body>
