@@ -871,15 +871,15 @@
       </div>
     </div>
 
-    <!-- Right Side -->
-    <div class="contact-form">
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
+         <!-- Right Side -->
+     <div class="contact-form">
+               <form action="https://formspree.io/f/xjkerabl" method="POST" id="contactForm">
+         <input type="text" name="name" placeholder="Your Name" required>
+         <input type="email" name="email" placeholder="Your Email" required>
+         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+         <button type="submit">Send Message</button>
+       </form>
+     </div>
   </div>
 </div>
 
@@ -930,6 +930,9 @@
   const menu = document.getElementById("mobileMenu");
   menu.classList.toggle("show");
 }
+
+     // Formspree will handle the form submission automatically
+   // You can customize the success page by adding ?next=YOUR_URL to the form action
   </script>
 
 </body>

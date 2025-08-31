@@ -1066,27 +1066,19 @@ body, html {
     right: 20px;
     top: 15px;
   }
-  .hero-main-image {
-    width: 55%;
-    min-width: 200px;
-  }
    .desktop-menu {
     display: none;
   }
   .hero-title {
     position: relative;
     margin-bottom: 10px !important;
-    margin-top: 50px; /* space below hamburger */
+    margin-top: 80px; /* space below hamburger */
     text-align: center;
-    font-size: clamp(2rem, 9vw, 2rem);
-    z-index: 5;
-    line-height: 1.3;
-    padding: 0px -20px;
-
+    font-size: clamp(2rem, 11vw, 2rem);
+    z-index: 1;
   }
   .hero-text-wrapper {
-    gap: 8px !important; 
-     padding-bottom: 8px !important;
+     padding-bottom: -10px !important;
     flex-direction: column;
   }
 
@@ -1096,7 +1088,7 @@ body, html {
     width: 100% !important;
     text-align: center !important;
     transform: none !important;
-    margin-top: 0 !important;
+    margin-top: -20 !important;
     margin-bottom: 20px;
   }
 
@@ -1193,26 +1185,25 @@ body, html {
   }
 
     #awardsCarousel .col-md-4 {
-    flex: 0 0 100%; /* full width card */
+    flex: 0 0 100%; 
     max-width: 100%;
   }
   #awardsCarousel .card {
-    padding: 30px; /* smaller padding on mobile */
+    padding: 30px; 
   }
   col-lg-6 {
         flex: 0 0 100%;
         max-width: 100%;
     }
 
-    /* On mobile, keep same height for all */
     .col-lg-6 .card {
         min-height: 300px;
     }
       .carousel-img {
-    max-height: 200px; /* shorter height on mobile */
+    max-height: 200px; 
   }
   .contact-form form {
-    align-items: stretch; /* normal full width on desktop */
+    align-items: stretch; 
   }
 
   .contact-form input,
