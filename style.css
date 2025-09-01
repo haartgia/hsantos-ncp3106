@@ -326,35 +326,38 @@ body, html {
 
 .skills-experiences .card:hover .card-title,
 .skills-experiences .card:hover .card-text {
-  color: #f1ede8;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .skills-experiences .card:hover .card-body {
-  transform: scale(1.06);
-}
-
-.skills-experiences .card img[alt="GitHub"],
-.skills-experiences .card img[alt="Git"] {
-  transition: filter 0.3s;
+  transform: scale(1.06) translateY(-30%);
+  transition: transform 0.5s ease;
 }
 
 .skills-experiences .card:hover img[alt="GitHub"],
 .skills-experiences .card:hover img[alt="Git"] {
-  filter: brightness(0) saturate(100%) invert(94%) sepia(2%) saturate(0%) hue-rotate(180deg) brightness(1.2);
+  filter: brightness(0) saturate(100%) invert(94%) saturate(0%) hue-rotate(180deg) brightness(1.2);
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+  margin: 0px;
 }
+
+
 
 .skills-experiences .hero-title {
   margin-bottom: 30px;
 }
 
-.card-text.small {
-  font-family: 'Sequel2', sans-serif;
-}
-
 .card-title {
   font-family: 'Sequel5', sans-serif;
+  font-size: 2rem; /* Change title font size here */
 }
 
+.card-text.small {
+  font-family: 'Sequel2', sans-serif;
+  font-size: 1rem; /* Change description font size here */
+}
 
 
 /* Odin's Crow Banner */
