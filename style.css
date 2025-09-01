@@ -196,17 +196,29 @@ body, html {
   font-family: 'Sequel2', sans-serif;
   text-decoration: none;
   color: #2a2a2a !important;
-  background-color: #f1ede8;
-  border-radius: 10px;
+  background-color: transparent;
+  border-radius: 0;
   margin: 3px;
   padding: 12px 15px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
   display: inline-block;
+  position: relative;
 }
 
-.nav-btn:hover {
-  background-color: #afa7a2;
+.nav-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2b2b2b;
+  transition: width 0.6s ease;
+}
+
+.nav-btn:hover::after {
+  width: 100%;
 }
 
 /* Mobile toggle */
