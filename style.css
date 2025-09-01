@@ -98,7 +98,7 @@ body, html {
   top: 32%;
   width: 32%;
   font-family: 'Sequel3', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #2b2b2b;
   line-height: 1.6;
   text-align: justify;
@@ -115,20 +115,20 @@ body, html {
   text-align: justify;
   color: #2b2b2b;
   font-family: 'Sequel3', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.6;
 }
 
 .hero-right-align {
   position: absolute;
-  top: -35%;
+  top: -45%;
   right: 0px;
   width: 140%;
   transform: translateY(-50%);
   text-align: justify;
   color: #2b2b2b;
   font-family: 'Sequel3', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.6;
 }
 
